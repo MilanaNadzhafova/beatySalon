@@ -39,18 +39,18 @@ namespace beautySalon
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelBack = new System.Windows.Forms.Panel();
+            this.txtTimeEnd = new System.Windows.Forms.MaskedTextBox();
+            this.lblTimeEnd = new System.Windows.Forms.Label();
+            this.txtTimeStart = new System.Windows.Forms.MaskedTextBox();
+            this.lblTimeStart = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.dateService = new System.Windows.Forms.DateTimePicker();
+            this.lblServiceDuration = new System.Windows.Forms.Label();
+            this.lblServiceName = new System.Windows.Forms.Label();
+            this.tableClient = new System.Windows.Forms.DataGridView();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblDuration = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.tableClient = new System.Windows.Forms.DataGridView();
-            this.lblServiceName = new System.Windows.Forms.Label();
-            this.lblServiceDuration = new System.Windows.Forms.Label();
-            this.dateService = new System.Windows.Forms.DateTimePicker();
-            this.lbDate = new System.Windows.Forms.Label();
-            this.lblTimeStart = new System.Windows.Forms.Label();
-            this.txtTimeStart = new System.Windows.Forms.MaskedTextBox();
-            this.txtTimeEnd = new System.Windows.Forms.MaskedTextBox();
-            this.lblTimeEnd = new System.Windows.Forms.Label();
             this.panelServiceAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelBack.SuspendLayout();
@@ -70,24 +70,27 @@ namespace beautySalon
             this.panelServiceAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelServiceAdd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panelServiceAdd.Location = new System.Drawing.Point(0, 0);
+            this.panelServiceAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelServiceAdd.Name = "panelServiceAdd";
-            this.panelServiceAdd.Size = new System.Drawing.Size(800, 515);
+            this.panelServiceAdd.Size = new System.Drawing.Size(1067, 634);
             this.panelServiceAdd.TabIndex = 3;
             // 
             // lblNameForm
             // 
             this.lblNameForm.AutoSize = true;
-            this.lblNameForm.Location = new System.Drawing.Point(339, 22);
+            this.lblNameForm.Location = new System.Drawing.Point(452, 27);
+            this.lblNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameForm.Name = "lblNameForm";
-            this.lblNameForm.Size = new System.Drawing.Size(115, 18);
+            this.lblNameForm.Size = new System.Drawing.Size(148, 23);
             this.lblNameForm.TabIndex = 9;
             this.lblNameForm.Text = "Запись клиента";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(749, 14);
+            this.btnClose.Location = new System.Drawing.Point(999, 17);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 35);
+            this.btnClose.Size = new System.Drawing.Size(52, 43);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -96,17 +99,19 @@ namespace beautySalon
             // lblNameSalon
             // 
             this.lblNameSalon.AutoSize = true;
-            this.lblNameSalon.Location = new System.Drawing.Point(63, 12);
+            this.lblNameSalon.Location = new System.Drawing.Point(84, 15);
+            this.lblNameSalon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameSalon.Name = "lblNameSalon";
-            this.lblNameSalon.Size = new System.Drawing.Size(87, 36);
+            this.lblNameSalon.Size = new System.Drawing.Size(109, 46);
             this.lblNameSalon.TabIndex = 2;
             this.lblNameSalon.Text = "бархатные \r\nбровки";
             // 
             // btnAddClientService
             // 
-            this.btnAddClientService.Location = new System.Drawing.Point(321, 414);
+            this.btnAddClientService.Location = new System.Drawing.Point(428, 510);
+            this.btnAddClientService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddClientService.Name = "btnAddClientService";
-            this.btnAddClientService.Size = new System.Drawing.Size(161, 35);
+            this.btnAddClientService.Size = new System.Drawing.Size(215, 43);
             this.btnAddClientService.TabIndex = 0;
             this.btnAddClientService.Text = "Записать клиента";
             this.btnAddClientService.UseVisualStyleBackColor = true;
@@ -115,9 +120,10 @@ namespace beautySalon
             // picLogo
             // 
             this.picLogo.Image = global::beautySalon.Properties.Resources.beauty;
-            this.picLogo.Location = new System.Drawing.Point(12, 12);
+            this.picLogo.Location = new System.Drawing.Point(16, 15);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(45, 37);
+            this.picLogo.Size = new System.Drawing.Size(60, 46);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 1;
             this.picLogo.TabStop = false;
@@ -126,9 +132,10 @@ namespace beautySalon
             // 
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 465);
+            this.panelFooter.Location = new System.Drawing.Point(0, 572);
+            this.panelFooter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(800, 50);
+            this.panelFooter.Size = new System.Drawing.Size(1067, 62);
             this.panelFooter.TabIndex = 0;
             // 
             // panelBack
@@ -146,38 +153,94 @@ namespace beautySalon
             this.panelBack.Controls.Add(this.lblDescription);
             this.panelBack.Controls.Add(this.lblDuration);
             this.panelBack.Controls.Add(this.lblName);
-            this.panelBack.Location = new System.Drawing.Point(66, 76);
+            this.panelBack.Location = new System.Drawing.Point(88, 94);
+            this.panelBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBack.Name = "panelBack";
-            this.panelBack.Size = new System.Drawing.Size(659, 325);
+            this.panelBack.Size = new System.Drawing.Size(879, 400);
             this.panelBack.TabIndex = 11;
             this.panelBack.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBack_Paint);
             // 
-            // lblDescription
+            // txtTimeEnd
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(263, 21);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(62, 18);
-            this.lblDescription.TabIndex = 20;
-            this.lblDescription.Text = "Клиент:";
+            this.txtTimeEnd.Location = new System.Drawing.Point(44, 347);
+            this.txtTimeEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimeEnd.Mask = "00:00";
+            this.txtTimeEnd.Name = "txtTimeEnd";
+            this.txtTimeEnd.ReadOnly = true;
+            this.txtTimeEnd.Size = new System.Drawing.Size(128, 30);
+            this.txtTimeEnd.TabIndex = 35;
+            this.txtTimeEnd.ValidatingType = typeof(System.DateTime);
             // 
-            // lblDuration
+            // lblTimeEnd
             // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Location = new System.Drawing.Point(30, 78);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(171, 18);
-            this.lblDuration.TabIndex = 16;
-            this.lblDuration.Text = "Длительность (в мин.):";
+            this.lblTimeEnd.AutoSize = true;
+            this.lblTimeEnd.Location = new System.Drawing.Point(40, 321);
+            this.lblTimeEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTimeEnd.Name = "lblTimeEnd";
+            this.lblTimeEnd.Size = new System.Drawing.Size(169, 23);
+            this.lblTimeEnd.TabIndex = 34;
+            this.lblTimeEnd.Text = "Время окончания:";
             // 
-            // lblName
+            // txtTimeStart
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(30, 21);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(113, 18);
-            this.lblName.TabIndex = 12;
-            this.lblName.Text = "Наименование:";
+            this.txtTimeStart.Location = new System.Drawing.Point(44, 267);
+            this.txtTimeStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimeStart.Mask = "00:00";
+            this.txtTimeStart.Name = "txtTimeStart";
+            this.txtTimeStart.Size = new System.Drawing.Size(128, 30);
+            this.txtTimeStart.TabIndex = 33;
+            this.txtTimeStart.ValidatingType = typeof(System.DateTime);
+            this.txtTimeStart.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtTimeStart_MaskInputRejected);
+            this.txtTimeStart.TextChanged += new System.EventHandler(this.txtTimeStart_TextChanged);
+            this.txtTimeStart.Leave += new System.EventHandler(this.txtTimeStart_Leave);
+            // 
+            // lblTimeStart
+            // 
+            this.lblTimeStart.AutoSize = true;
+            this.lblTimeStart.Location = new System.Drawing.Point(40, 241);
+            this.lblTimeStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTimeStart.Name = "lblTimeStart";
+            this.lblTimeStart.Size = new System.Drawing.Size(139, 23);
+            this.lblTimeStart.TabIndex = 32;
+            this.lblTimeStart.Text = "Время начала:";
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Location = new System.Drawing.Point(40, 162);
+            this.lbDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(208, 23);
+            this.lbDate.TabIndex = 30;
+            this.lbDate.Text = "Дата оказания услуги:";
+            // 
+            // dateService
+            // 
+            this.dateService.Location = new System.Drawing.Point(44, 188);
+            this.dateService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateService.Name = "dateService";
+            this.dateService.Size = new System.Drawing.Size(265, 30);
+            this.dateService.TabIndex = 29;
+            // 
+            // lblServiceDuration
+            // 
+            this.lblServiceDuration.AutoSize = true;
+            this.lblServiceDuration.Location = new System.Drawing.Point(40, 118);
+            this.lblServiceDuration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServiceDuration.Name = "lblServiceDuration";
+            this.lblServiceDuration.Size = new System.Drawing.Size(217, 23);
+            this.lblServiceDuration.TabIndex = 28;
+            this.lblServiceDuration.Text = "Длительность (в мин.):";
+            // 
+            // lblServiceName
+            // 
+            this.lblServiceName.AutoSize = true;
+            this.lblServiceName.Location = new System.Drawing.Point(40, 52);
+            this.lblServiceName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServiceName.Name = "lblServiceName";
+            this.lblServiceName.Size = new System.Drawing.Size(146, 23);
+            this.lblServiceName.TabIndex = 27;
+            this.lblServiceName.Text = "Наименование:";
             // 
             // tableClient
             // 
@@ -197,100 +260,58 @@ namespace beautySalon
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tableClient.DefaultCellStyle = dataGridViewCellStyle1;
-            this.tableClient.Location = new System.Drawing.Point(266, 42);
+            this.tableClient.Location = new System.Drawing.Point(355, 52);
+            this.tableClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableClient.MultiSelect = false;
             this.tableClient.Name = "tableClient";
             this.tableClient.ReadOnly = true;
             this.tableClient.RowHeadersVisible = false;
+            this.tableClient.RowHeadersWidth = 51;
             this.tableClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableClient.Size = new System.Drawing.Size(362, 266);
+            this.tableClient.Size = new System.Drawing.Size(483, 327);
             this.tableClient.TabIndex = 26;
             // 
-            // lblServiceName
+            // lblDescription
             // 
-            this.lblServiceName.AutoSize = true;
-            this.lblServiceName.Location = new System.Drawing.Point(30, 42);
-            this.lblServiceName.Name = "lblServiceName";
-            this.lblServiceName.Size = new System.Drawing.Size(113, 18);
-            this.lblServiceName.TabIndex = 27;
-            this.lblServiceName.Text = "Наименование:";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(351, 26);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(80, 23);
+            this.lblDescription.TabIndex = 20;
+            this.lblDescription.Text = "Клиент:";
             // 
-            // lblServiceDuration
+            // lblDuration
             // 
-            this.lblServiceDuration.AutoSize = true;
-            this.lblServiceDuration.Location = new System.Drawing.Point(30, 96);
-            this.lblServiceDuration.Name = "lblServiceDuration";
-            this.lblServiceDuration.Size = new System.Drawing.Size(171, 18);
-            this.lblServiceDuration.TabIndex = 28;
-            this.lblServiceDuration.Text = "Длительность (в мин.):";
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Location = new System.Drawing.Point(40, 96);
+            this.lblDuration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(217, 23);
+            this.lblDuration.TabIndex = 16;
+            this.lblDuration.Text = "Длительность (в мин.):";
             // 
-            // dateService
+            // lblName
             // 
-            this.dateService.Location = new System.Drawing.Point(33, 153);
-            this.dateService.Name = "dateService";
-            this.dateService.Size = new System.Drawing.Size(200, 26);
-            this.dateService.TabIndex = 29;
-            // 
-            // lbDate
-            // 
-            this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(30, 132);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(164, 18);
-            this.lbDate.TabIndex = 30;
-            this.lbDate.Text = "Дата оказания услуги:";
-            // 
-            // lblTimeStart
-            // 
-            this.lblTimeStart.AutoSize = true;
-            this.lblTimeStart.Location = new System.Drawing.Point(30, 196);
-            this.lblTimeStart.Name = "lblTimeStart";
-            this.lblTimeStart.Size = new System.Drawing.Size(109, 18);
-            this.lblTimeStart.TabIndex = 32;
-            this.lblTimeStart.Text = "Время начала:";
-            // 
-            // txtTimeStart
-            // 
-            this.txtTimeStart.Location = new System.Drawing.Point(33, 217);
-            this.txtTimeStart.Mask = "00:00";
-            this.txtTimeStart.Name = "txtTimeStart";
-            this.txtTimeStart.Size = new System.Drawing.Size(97, 26);
-            this.txtTimeStart.TabIndex = 33;
-            this.txtTimeStart.ValidatingType = typeof(System.DateTime);
-            this.txtTimeStart.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtTimeStart_MaskInputRejected);
-            this.txtTimeStart.TextChanged += new System.EventHandler(this.txtTimeStart_TextChanged);
-            this.txtTimeStart.Leave += new System.EventHandler(this.txtTimeStart_Leave);
-            // 
-            // txtTimeEnd
-            // 
-            this.txtTimeEnd.Location = new System.Drawing.Point(33, 282);
-            this.txtTimeEnd.Mask = "00:00";
-            this.txtTimeEnd.Name = "txtTimeEnd";
-            this.txtTimeEnd.ReadOnly = true;
-            this.txtTimeEnd.Size = new System.Drawing.Size(97, 26);
-            this.txtTimeEnd.TabIndex = 35;
-            this.txtTimeEnd.ValidatingType = typeof(System.DateTime);
-            // 
-            // lblTimeEnd
-            // 
-            this.lblTimeEnd.AutoSize = true;
-            this.lblTimeEnd.Location = new System.Drawing.Point(30, 261);
-            this.lblTimeEnd.Name = "lblTimeEnd";
-            this.lblTimeEnd.Size = new System.Drawing.Size(132, 18);
-            this.lblTimeEnd.TabIndex = 34;
-            this.lblTimeEnd.Text = "Время окончания:";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(40, 26);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(146, 23);
+            this.lblName.TabIndex = 12;
+            this.lblName.Text = "Наименование:";
             // 
             // ClienService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 515);
+            this.ClientSize = new System.Drawing.Size(1067, 634);
             this.ControlBox = false;
             this.Controls.Add(this.panelServiceAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClienService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ClienService";
             this.Load += new System.EventHandler(this.ClienService_Load);
             this.panelServiceAdd.ResumeLayout(false);
             this.panelServiceAdd.PerformLayout();

@@ -200,6 +200,7 @@ namespace beautySalon
             this.btnComingRecorf.TabIndex = 4;
             this.btnComingRecorf.Text = "Ближайшие записи";
             this.btnComingRecorf.UseVisualStyleBackColor = true;
+            this.btnComingRecorf.Click += new System.EventHandler(this.btnComingRecorf_Click);
             // 
             // btnRecordClient
             // 

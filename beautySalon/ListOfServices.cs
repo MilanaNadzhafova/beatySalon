@@ -136,7 +136,12 @@ namespace beautySalon
             int i = 0;
             foreach (DataGridViewRow item in tableService.Rows)
             {
-                Image img = new Bitmap(ArrPath[i]);
+                Image img;
+                using (FileStream file = new FileStream(ArrPath[i], FileMode.Open))
+                {
+                    img = Image.FromStream(file);
+                    file.Dispose();
+                }
                 Size size = new Size(40, 40);
                 list.Add(new Bitmap(img, size));
                 i++;
@@ -325,6 +330,11 @@ namespace beautySalon
         private void btnRecordClient_Click(object sender, EventArgs e)
         {
             new ClienService(Convert.ToInt32(tableService.SelectedRows[0].Cells["ID"].Value)).ShowDialog();
+        }
+
+        private void btnComingRecorf_Click(object sender, EventArgs e)
+        {
+            new RecordShow().ShowDialog();
         }
     }
 }

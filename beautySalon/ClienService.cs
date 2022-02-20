@@ -93,7 +93,7 @@ namespace beautySalon
 
         public bool ValidateTime()
         {
-            Regex regex = new Regex(@"^(([0,1][0-9])|(2[0-1])):[0-5][0-9]$");
+            Regex regex = new Regex(@"^(([0,1][0-9])|(2[0-3])):[0-5][0-9]$");
             if (regex.IsMatch(txtTimeStart.Text))
             {
                 return true;
@@ -114,13 +114,32 @@ namespace beautySalon
 
         private void txtTimeStart_Leave(object sender, EventArgs e)
         {
-            if (!ValidateTime()) MessageBox.Show("Введите корректное время!");
+            if (!ValidateTime()) MessageBox.Show("Введите корректную дату и время начала!");
             else
             {
                 var ArrStr = txtTimeStart.Text.Split(':');
                 date = new DateTime(dateService.Value.Year, dateService.Value.Month, dateService.Value.Day, Convert.ToInt32(ArrStr[0]), Convert.ToInt32(ArrStr[1]), 0);
+                if (date < DateTime.Now)
+                {
+                    MessageBox.Show("Введите корректную дату и время начала!");
+                    return;
+                }
                 var d = date.AddMinutes(service.DurationInSeconds / 60);
-                txtTimeEnd.Text = d.ToShortTimeString();
+                if (d.Hour < 10)
+                {
+                    if (d.Minute < 10)
+                        txtTimeEnd.Text = "0" + d.Hour + ":" + "0" + d.Minute;
+                    else
+                        txtTimeEnd.Text = "0" + d.Hour + ":" + d.Minute;
+                }
+                else
+                {
+                    if (d.Minute < 10)
+                        txtTimeEnd.Text = d.Hour + ":" + "0" + d.Minute;
+                    else
+                        txtTimeEnd.Text = d.Hour + ":" + d.Minute;
+                }
+
             }
         }
     }

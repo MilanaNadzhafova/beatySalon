@@ -29,34 +29,39 @@ namespace beautySalon
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddService));
             this.panelServiceAdd = new System.Windows.Forms.Panel();
             this.lblNameForm = new System.Windows.Forms.Label();
-            this.btnAddService = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblNameSalon = new System.Windows.Forms.Label();
+            this.btnAddService = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.panelBack = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
+            this.btnDeletePhoto = new System.Windows.Forms.Button();
+            this.btnAddMorePhoto = new System.Windows.Forms.Button();
+            this.tablePicture = new System.Windows.Forms.DataGridView();
+            this.txtDiscount = new System.Windows.Forms.NumericUpDown();
+            this.txtDuration = new System.Windows.Forms.NumericUpDown();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picService = new System.Windows.Forms.PictureBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblDuration = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.lblDuration = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.picService = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddPhoto = new System.Windows.Forms.Button();
-            this.txtDescription = new System.Windows.Forms.RichTextBox();
-            this.txtDuration = new System.Windows.Forms.NumericUpDown();
-            this.txtDiscount = new System.Windows.Forms.NumericUpDown();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.panelServiceAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picService)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picService)).BeginInit();
             this.SuspendLayout();
             // 
             // panelServiceAdd
@@ -73,7 +78,7 @@ namespace beautySalon
             this.panelServiceAdd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panelServiceAdd.Location = new System.Drawing.Point(0, 0);
             this.panelServiceAdd.Name = "panelServiceAdd";
-            this.panelServiceAdd.Size = new System.Drawing.Size(778, 450);
+            this.panelServiceAdd.Size = new System.Drawing.Size(778, 780);
             this.panelServiceAdd.TabIndex = 2;
             // 
             // lblNameForm
@@ -84,16 +89,6 @@ namespace beautySalon
             this.lblNameForm.Size = new System.Drawing.Size(140, 18);
             this.lblNameForm.TabIndex = 9;
             this.lblNameForm.Text = "Добавление услуги";
-            // 
-            // btnAddService
-            // 
-            this.btnAddService.Location = new System.Drawing.Point(316, 350);
-            this.btnAddService.Name = "btnAddService";
-            this.btnAddService.Size = new System.Drawing.Size(161, 35);
-            this.btnAddService.TabIndex = 0;
-            this.btnAddService.Text = "Добавить услугу";
-            this.btnAddService.UseVisualStyleBackColor = true;
-            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
             // 
             // btnClose
             // 
@@ -114,6 +109,16 @@ namespace beautySalon
             this.lblNameSalon.TabIndex = 2;
             this.lblNameSalon.Text = "бархатные \r\nбровки";
             // 
+            // btnAddService
+            // 
+            this.btnAddService.Location = new System.Drawing.Point(328, 651);
+            this.btnAddService.Name = "btnAddService";
+            this.btnAddService.Size = new System.Drawing.Size(161, 35);
+            this.btnAddService.TabIndex = 0;
+            this.btnAddService.Text = "Добавить услугу";
+            this.btnAddService.UseVisualStyleBackColor = true;
+            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
+            // 
             // picLogo
             // 
             this.picLogo.Image = global::beautySalon.Properties.Resources.beauty;
@@ -128,21 +133,17 @@ namespace beautySalon
             // 
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 400);
+            this.panelFooter.Location = new System.Drawing.Point(0, 730);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(778, 50);
             this.panelFooter.TabIndex = 0;
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(13, 29);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(185, 26);
-            this.txtName.TabIndex = 10;
-            // 
             // panelBack
             // 
             this.panelBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.panelBack.Controls.Add(this.btnDeletePhoto);
+            this.panelBack.Controls.Add(this.btnAddMorePhoto);
+            this.panelBack.Controls.Add(this.tablePicture);
             this.panelBack.Controls.Add(this.txtDiscount);
             this.panelBack.Controls.Add(this.txtDuration);
             this.panelBack.Controls.Add(this.txtDescription);
@@ -158,97 +159,66 @@ namespace beautySalon
             this.panelBack.Controls.Add(this.txtName);
             this.panelBack.Location = new System.Drawing.Point(66, 76);
             this.panelBack.Name = "panelBack";
-            this.panelBack.Size = new System.Drawing.Size(659, 260);
+            this.panelBack.Size = new System.Drawing.Size(659, 551);
             this.panelBack.TabIndex = 11;
             this.panelBack.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBack_Paint);
             // 
-            // lblName
+            // btnDeletePhoto
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(14, 8);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(113, 18);
-            this.lblName.TabIndex = 12;
-            this.lblName.Text = "Наименование:";
+            this.btnDeletePhoto.Location = new System.Drawing.Point(477, 494);
+            this.btnDeletePhoto.Name = "btnDeletePhoto";
+            this.btnDeletePhoto.Size = new System.Drawing.Size(161, 34);
+            this.btnDeletePhoto.TabIndex = 29;
+            this.btnDeletePhoto.Text = "Удалить фото";
+            this.btnDeletePhoto.UseVisualStyleBackColor = true;
+            this.btnDeletePhoto.Click += new System.EventHandler(this.btnDeletePhoto_Click);
             // 
-            // lblPrice
+            // btnAddMorePhoto
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(14, 68);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(146, 18);
-            this.lblPrice.TabIndex = 14;
-            this.lblPrice.Text = "Стоимость (в руб.):";
+            this.btnAddMorePhoto.Location = new System.Drawing.Point(294, 494);
+            this.btnAddMorePhoto.Name = "btnAddMorePhoto";
+            this.btnAddMorePhoto.Size = new System.Drawing.Size(161, 34);
+            this.btnAddMorePhoto.TabIndex = 28;
+            this.btnAddMorePhoto.Text = "Добавить фото";
+            this.btnAddMorePhoto.UseVisualStyleBackColor = true;
+            this.btnAddMorePhoto.Click += new System.EventHandler(this.btnAddMorePhoto_Click);
             // 
-            // txtPrice
+            // tablePicture
             // 
-            this.txtPrice.Location = new System.Drawing.Point(13, 89);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(185, 26);
-            this.txtPrice.TabIndex = 13;
+            this.tablePicture.AllowUserToAddRows = false;
+            this.tablePicture.AllowUserToDeleteRows = false;
+            this.tablePicture.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablePicture.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablePicture.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.tablePicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablePicture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablePicture.Cursor = System.Windows.Forms.Cursors.IBeam;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(74)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablePicture.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tablePicture.Location = new System.Drawing.Point(17, 276);
+            this.tablePicture.Margin = new System.Windows.Forms.Padding(4);
+            this.tablePicture.MultiSelect = false;
+            this.tablePicture.Name = "tablePicture";
+            this.tablePicture.ReadOnly = true;
+            this.tablePicture.RowHeadersVisible = false;
+            this.tablePicture.RowHeadersWidth = 51;
+            this.tablePicture.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablePicture.Size = new System.Drawing.Size(618, 211);
+            this.tablePicture.TabIndex = 27;
             // 
-            // lblDuration
+            // txtDiscount
             // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Location = new System.Drawing.Point(14, 132);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(171, 18);
-            this.lblDuration.TabIndex = 16;
-            this.lblDuration.Text = "Длительность (в мин.):";
-            // 
-            // lblDiscount
-            // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Location = new System.Drawing.Point(14, 195);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(105, 18);
-            this.lblDiscount.TabIndex = 18;
-            this.lblDiscount.Text = "Скидка (в %):";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(226, 8);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(79, 18);
-            this.lblDescription.TabIndex = 20;
-            this.lblDescription.Text = "Описание:";
-            // 
-            // picService
-            // 
-            this.picService.Location = new System.Drawing.Point(472, 33);
-            this.picService.Name = "picService";
-            this.picService.Size = new System.Drawing.Size(166, 170);
-            this.picService.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picService.TabIndex = 21;
-            this.picService.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(469, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 18);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Изображение:";
-            // 
-            // btnAddPhoto
-            // 
-            this.btnAddPhoto.Location = new System.Drawing.Point(474, 213);
-            this.btnAddPhoto.Name = "btnAddPhoto";
-            this.btnAddPhoto.Size = new System.Drawing.Size(161, 34);
-            this.btnAddPhoto.TabIndex = 12;
-            this.btnAddPhoto.Text = "Добавить фото";
-            this.btnAddPhoto.UseVisualStyleBackColor = true;
-            this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(229, 29);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(210, 218);
-            this.txtDescription.TabIndex = 23;
-            this.txtDescription.Text = "";
+            this.txtDiscount.Location = new System.Drawing.Point(13, 217);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(185, 26);
+            this.txtDiscount.TabIndex = 25;
             // 
             // txtDuration
             // 
@@ -272,31 +242,121 @@ namespace beautySalon
             0,
             0});
             // 
-            // txtDiscount
+            // txtDescription
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(13, 217);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(185, 26);
-            this.txtDiscount.TabIndex = 25;
+            this.txtDescription.Location = new System.Drawing.Point(229, 29);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(210, 218);
+            this.txtDescription.TabIndex = 23;
+            this.txtDescription.Text = "";
+            // 
+            // btnAddPhoto
+            // 
+            this.btnAddPhoto.Location = new System.Drawing.Point(17, 494);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(252, 34);
+            this.btnAddPhoto.TabIndex = 12;
+            this.btnAddPhoto.Text = "Выбрать главным изображением";
+            this.btnAddPhoto.UseVisualStyleBackColor = true;
+            this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(469, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 18);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Изображение:";
+            // 
+            // picService
+            // 
+            this.picService.Location = new System.Drawing.Point(472, 33);
+            this.picService.Name = "picService";
+            this.picService.Size = new System.Drawing.Size(166, 170);
+            this.picService.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picService.TabIndex = 21;
+            this.picService.TabStop = false;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(226, 8);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(79, 18);
+            this.lblDescription.TabIndex = 20;
+            this.lblDescription.Text = "Описание:";
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.Location = new System.Drawing.Point(14, 195);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(105, 18);
+            this.lblDiscount.TabIndex = 18;
+            this.lblDiscount.Text = "Скидка (в %):";
+            // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Location = new System.Drawing.Point(14, 132);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(171, 18);
+            this.lblDuration.TabIndex = 16;
+            this.lblDuration.Text = "Длительность (в мин.):";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(14, 68);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(146, 18);
+            this.lblPrice.TabIndex = 14;
+            this.lblPrice.Text = "Стоимость (в руб.):";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(13, 89);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(185, 26);
+            this.txtPrice.TabIndex = 13;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(14, 8);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(113, 18);
+            this.lblName.TabIndex = 12;
+            this.lblName.Text = "Наименование:";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(13, 29);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(185, 26);
+            this.txtName.TabIndex = 10;
             // 
             // AddService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 450);
+            this.ClientSize = new System.Drawing.Size(778, 780);
             this.ControlBox = false;
             this.Controls.Add(this.panelServiceAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.AddService_Load);
             this.panelServiceAdd.ResumeLayout(false);
             this.panelServiceAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelBack.ResumeLayout(false);
             this.panelBack.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picService)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picService)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,5 +384,8 @@ namespace beautySalon
         private System.Windows.Forms.NumericUpDown txtDiscount;
         private System.Windows.Forms.NumericUpDown txtDuration;
         private System.Windows.Forms.RichTextBox txtDescription;
+        private System.Windows.Forms.Button btnDeletePhoto;
+        private System.Windows.Forms.Button btnAddMorePhoto;
+        private System.Windows.Forms.DataGridView tablePicture;
     }
 }
